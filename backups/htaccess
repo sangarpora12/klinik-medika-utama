@@ -1,0 +1,10 @@
+# Blokir semua akses langsung ke folder ini lewat browser
+# Mendukung Apache 2.4 (Require) & Apache 2.2 (Deny)
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
